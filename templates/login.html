@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block title %}
+    登录
+{% endblock %}
+
+
+{% block staticfiles %}
+     <link rel="stylesheet" href="{% static '/myApp/css/login.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="all" >
+
+    <div class="all_field" id="login"  >
+        <div class="back" align="left">
+            <h4><a href="{% url 'main' %}"> 返回</a></h4>
+        </div>
+
+        <h1 align="left">欢迎回来</h1>
+        </br>
+
+
+        <div id="box">
+            <form action="/login/" method="post">
+            {% csrf_token %}
+
+                <div class="input-group input-group-lg" >
+                 <span class="input-group-addon" id="basic-addon1">账号</span>
+                 {# <input type="text" class="form-control" placeholder="Username"aria-describedby="basic-addon1"> #}
+                    {{ form.userphone }}
+                    {% if error.userphone.0 %}
+                        <span>{{ error.userphone.0 }}</span>
+                    {% endif %}
+                </div>
+                <br/>
+                <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="basic-addon1">密码</span>
+                    {{ form.passwd }}
+                    <br/>
+                    {% if error.passwd.0 %}
+                        <span>{{ error.passwd.0 }}</span>
+                    {% endif %}
+                </div>
+
+                {% if flag_userDoesNotExist == 1 %}
+                    <span style="color: red">用户不存在或密码错误，请重新输入</span>
+                {% else %}
+                    <h5>&nbsp</h5>
+                {% endif %}
+
+            <div class="login_submit" align="left">
+                <input type="submit" value="登录">
+            </div>
+
+            </form>
+
+            </br>
+
+            <div class="row" >
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <h4 style="font-size: 110%">还不是会员？<a href="/regist/">新会员注册</a></h4>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <h4 style="font-size: 110%"><a href="/forgetpassword/">忘记密码</a></h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

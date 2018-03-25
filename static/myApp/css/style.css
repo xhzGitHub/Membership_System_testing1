@@ -1,0 +1,43 @@
+h3.header{
+    text-align: center;
+    margin-top: 0.1em;
+    margin-left: 5em;
+}
+
+div.Main_header{
+    position:relative;
+    margin-top: 5em;
+
+}
+
+div.Main_header div.font_1{
+    position:absolute;
+    margin-top: -13em;
+    margin-left: 2em;
+    list-style-type: none;
+
+}
+
+div.loginStas{
+    margin-left: 1em;
+    font-size: 150%;
+}
+
+a.y1:active{
+    text-decoration: none;
+}
+
+a.y1:hover{
+    text-decoration: none;
+}
+
+a.y1:link{
+    text-decoration: none;
+}
+a.y1:visited{
+    text-decoration: none;
+}
+
+div.Main_header a{
+     text-decoration: none;
+}

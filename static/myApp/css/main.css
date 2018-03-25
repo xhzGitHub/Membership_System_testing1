@@ -1,0 +1,105 @@
+div.head{
+    height: 240px  ;
+    background-image: url(/static/myApp/img/membership.png) ;
+    background-repeat: no-repeat ;
+    background-size: 350px ;
+    background-position: center center;
+    margin-top: 5em;
+    width: 100%;
+    margin-right: 100px;
+}
+
+div.Main_header{
+    height: 160px;
+    width: 380px;
+}
+div.zunjingdehuiyuan{
+    margin-left: 30px;
+}
+div.zunjingdehuiyuan h3{
+    display: inline-block;
+    color: #985f0d
+}
+
+a.colofa{
+    font-weight: bold;
+    font-size:150%;
+    margin-top: 0em;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0em;
+    width: 150px;
+    text-decoration: none;
+    color: #eeeeee;
+}
+
+div.huiyuandengji{
+    margin-left: 30px;
+    width: 70px;
+}
+
+div.huiyuandengji h5{
+    width: 80px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-right: 30px;
+    color:#eeeeee;
+    font-weight: bold;
+}
+
+div.loginviews{
+    background-color: #eeeeee;
+}
+
+div.loginviews h4{
+    width: 160px;
+    margin-left: 20px;
+}
+
+div.loginviews{
+    background-color: #eeeeee;
+}
+
+div.loginviews h4{
+    width: 120px;
+}
+
+div.loginviews{
+    background-color: #eeeeee;
+}
+
+div.loginviews h4{
+    width: 120px;
+}
+
+div.henglan{
+    text-align: right;
+    padding: 0px;
+    margin-right: 0px;
+    width: 150px;
+}
+
+
+div.henglan h4{
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 0px;
+
+}
+
+div.henglan a{
+     text-align: right;
+}
+
+div.liebiao{
+    margin-top:60px;
+    background-color: #ffffff;
+}
+
+h3.qita{
+    text-align: center;
+    width: 375px;
+    height: 30px;
+}
+
+

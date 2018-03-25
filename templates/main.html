@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block title %}
+    我的会员
+{% endblock %}
+
+{% block staticfiles %}
+     <link rel="stylesheet" href="{% static '/myApp/css/main.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+
+        <div class="head">
+            <div class="row" >
+                <div >
+                   {# <div class="header1" style="background-image: url(/static/myApp/img/membership.png)"> #}
+
+                    <div class="Main_header" align="center">
+                        {# <img src="/static/myApp/img/membership.png" alt="Responsive image" width="100%" height="100%"> #}
+                        <div class="row">
+
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="zunjingdehuiyuan">
+                                      <h3 >尊敬的会员: </h3>
+                                        <br/>
+                                        <a class="colofa" href="/login/" >
+                                            {{ username }}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
+                                    <div class="huiyuandengji">
+                                        <h5>{{ MemberRank }}</h5>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                    <div class="loginviews">
+                        <div class="row" >
+                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" >
+                               <h4 >当前：{{ LoginViewstatus }}</h4>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+
+                                <div class="henglan">
+
+                                <h4><a href="/regist/">&nbsp 注册 </a>
+
+                                {% if flag == 1 %}
+                                    <a href="/login/"  style="text-decoration: none">&nbsp {{ LoginOrLogout }} </a></h4>
+                                {% elif  flag == 0 %}
+                                    <a href="/quit/"  style="text-decoration: none">&nbsp {{ LoginOrLogout }} </a></h4>
+                                {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <br/>
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="liebiao">
+        <div class="container-fluid" >
+                    {# <ul class="list-group" style="height: 300px;width: 345px;"> #}
+                       <h4>我的余额：{{ MemberBlance }}</h4>
+                        <hr>
+                       <h4>我的积分：{{ MemberIntegral }}</h4>
+                        <hr>
+                       <h4>我的优惠券：0张</h4>
+                        <hr>
+                    {# </ul> #}
+        </div>
+    </div>
+
+    <div class="qita" align="center">
+        <h3>其它功能正在建设中...</h3>
+    </div>
+
+
+
+{% endblock %}

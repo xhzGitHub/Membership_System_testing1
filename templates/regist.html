@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block title %}
+    注册会员
+{% endblock %}
+
+{% block staticfiles %}
+    <link rel="stylesheet" href="{% static '/myApp/css/regist.css' %}" type="text/css">
+    <script type="text/javascript" src="{% static '/myApp/js/regist.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="all">
+
+     <div class="all_field" id="regist" >
+
+         <div class="header" id="header" align="left" >
+             <h4><a href="{% url 'main' %}">&lt 返回</a></h4>
+         </div>
+
+         <h5>欢迎加入【由我】大家庭</h5>
+         <h1>输入手机号码</h1>
+
+         </br>
+         <form action="/regist/" method="post" enctype="multipart/form-data">
+             {% csrf_token %}
+
+             {# 当聚焦时，验证码框的错误不再显示 #}
+
+            <script>
+                function setStyle(x,y)
+                {
+                    {% if flag_VerifycodeIsRight == 1 %}
+                        document.getElementById(x).style.border="1px solid lightgray";
+                        document.getElementById(y).style.display="none";
+                    {% endif %}
+                }
+            </script>
+
+             <div class="input-group">
+                 <span class="input-group-addon">手机</span>
+                 <input id='account' type="text" class="form-control"
+                        placeholder="请填写您真实的11位电话号码" aria-descirbedby="basic-addon1"
+                        name="userPhone" onfocus="setStyle('check_verifycode','error_verify')" >
+                <br/>
+             </div>
+                <span id="accounterr" class="error" style="color: red">账号必须是11位数字的电话号码</span>
+                <span id="checkerr" class="error" style="color: red">该账户已被注册，请重新输入</span>
+                <br/>
+
+             <div class="input-group">
+                <span class="input-group-addon">密码</span>
+                <input id="pass" type="password" class="form-control"
+                       aria-descirbedby="basic-addon1" placeholder="密码长度为6-16个字符"
+                       name = 'userPass' onfocus="setStyle('check_verifycode','error_verify')">
+                <br/>
+             </div>
+             <span id="passerr" class="error" style="color: red">密码格式输入错误</span>
+             <br/>
+
+             <div class="input-group" >
+                <span class="input-group-addon">确认密码</span>
+                <input id="passwd" type="password" class="form-control"
+                       aria-descirbedby="basic-addon1" placeholder="再次填写密码"
+                       name = 'confirmPass' >
+                <br/>
+                <span id="passwderr" class="error" style="color: red">两次密码输入不同</span>
+
+            </div>
+
+             <br/>
+
+            <div class="input-group" >
+                {# 点击图片刷新验证码 #}
+                <script>
+                    function refresh_check_code(ths) {
+                        ths.src += '?';
+                    }
+                </script>
+
+
+                <span class="input-group-addon">验证码</span>
+                {# 如果验证码输入错误，边框变红 #}
+                {% if flag_VerifycodeIsRight == 1 %}
+                    <input id="check_verifycode" type="text" class="form-control"
+                           aria-descirbedby="basic-addon1" placeholder="输入验证码"
+                           name = 'verifycode' style="border: 1px solid red"
+                           onfocus="setStyle('check_verifycode','error_verify')">
+                {% else %}
+                    <input id="check_verifycode" type="text" class="form-control"
+                           aria-descirbedby="basic-addon1" placeholder="输入验证码"
+                           name = 'verifycode' onfocus="setStyle('check_verifycode','error_verify')">
+                {% endif %}
+                <img src="/verifycode/" title="点击更新验证码" onclick="refresh_check_code(this)">
+                <span align="right" style="font-size: 50%">&nbsp &nbsp点击图片刷新</span>
+                <br/>
+            </div>
+            {% if flag_VerifycodeIsRight == 1 %}
+                <span id="error_verify" class="error_vericode"
+                      style="color: red;margin-left: 73px;" >验证码错误,请重新输入信息</span>
+                </br>
+            {% endif %}
+             </br>
+
+
+        <div class="submitbutton">
+            <input type="submit" value="注册">
+        </div>
+        </form>
+     </div>
+</div>
+{% endblock %}

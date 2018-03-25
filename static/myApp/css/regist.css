@@ -1,0 +1,42 @@
+div.all{
+    margin-left: 15px;
+}
+
+div.all_field{
+    margin-top: 80px;
+}
+
+div.header{
+    margin-left: 2px;
+}
+
+div.all_field h5{
+    margin-top: 20px;
+}
+
+div.all_field h1{
+    margin-top: 0px;
+}
+
+div.all_field div.input-group input{
+    width: 280px;
+}
+
+div.all_field div.input-group #passwd{
+    width: 252px;
+}
+
+div.submitbutton input{
+    width: 347px;
+    height:34px;
+}
+
+div.all_field div.input-group #check_verifycode{
+    width: 100px;
+}
+
+span.error_vericode{
+
+}
+
+

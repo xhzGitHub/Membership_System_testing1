@@ -1,0 +1,28 @@
+div.all{
+    margin-left: 15px;
+}
+
+div.all_field{
+    margin-top: 100px;
+}
+
+div.all_field div.row{
+    margin-bottom: 15px;
+    padding-left: 0px;
+    padding-right: 22px;
+}
+
+div.back h4{
+    align-content: left;
+}
+
+div.login_submit input{
+    width: 345px;
+    height: 46px;
+    font-size: 130%;
+    font-family: 微软雅黑;
+}
+
+span.error{
+    color: red;
+}
